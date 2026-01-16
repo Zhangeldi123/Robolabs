@@ -7,8 +7,14 @@ from aiogram.fsm.state import State, StatesGroup
 from dotenv import load_dotenv
 
 from storage import init_db, upsert_lead, count_leads, Lead
+from pathlib import Path
+from dotenv import load_dotenv
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+env_path = BASE_DIR / ".env"
+if env_path.exists() and env_path.stat().st_size > 0:
+    load_dotenv(env_path)
+
 
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))
