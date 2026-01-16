@@ -1,0 +1,24 @@
+@"
+# secrets
+.env
+*.env
+
+# venv
+.venv/
+venv/
+
+# python
+__pycache__/
+*.pyc
+
+# local db / runtime
+bot.db
+*.sqlite*
+*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+"@ | Set-Content -Encoding UTF8 .\.gitignore
